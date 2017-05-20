@@ -15,12 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="一、有接触过后端语言么？谈谈你前后端的理解？  1.接触过，php，技术体系是wamp - windows apache mysql php 2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据 3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。  二、前端与">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Yeing.lx">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/05/21/后端问题/index.html">
 <meta property="og:site_name" content="Yeing.lx">
+<meta property="og:description" content="一、有接触过后端语言么？谈谈你前后端的理解？  1.接触过，php，技术体系是wamp - windows apache mysql php 2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据 3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。  二、前端与">
+<meta property="og:image" content="http://i.imgur.com/O7lDl2Z.png">
+<meta property="og:updated_time" content="2017-05-20T17:39:14.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yeing.lx">
+<meta name="twitter:description" content="一、有接触过后端语言么？谈谈你前后端的理解？  1.接触过，php，技术体系是wamp - windows apache mysql php 2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据 3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。  二、前端与">
+<meta name="twitter:image" content="http://i.imgur.com/O7lDl2Z.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2017 | Yeing.lx</title>
+<title>Yeing.lx</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +68,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -256,69 +262,171 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-后端问题" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/05/21/后端问题/" class="archive-article-date">
-      <time datetime="2017-05-20T17:31:57.623Z" itemprop="datePublished">05-21</time>
+    <div class="article-meta">
+      <a href="/2017/05/21/后端问题/" class="article-date">
+      <time datetime="2017-05-20T17:31:57.623Z" itemprop="datePublished">2017-05-21</time>
 </a>
 
 
-        </div>
-         
-        <div class="article-info info-on-archive">
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <p>一、有接触过后端语言么？谈谈你前后端的理解？</p>
+<blockquote>
+<p>1.接触过，php，技术体系是wamp - windows apache mysql php</p>
+<p>2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据</p>
+<p>3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。</p>
+</blockquote>
+<p>二、前端与后端工程师配合工作，主要在哪些方面？</p>
+<blockquote>
+<p>1.前端给后端数据：form提交、ajax的data数据提交</p>
+<p>2.后端给前端数据：ajax的success返回、框架自带的模版引擎做数据渲染</p>
+</blockquote>
+<p>三、何为同源，何为跨域？</p>
+<blockquote>
+<p>1.同源：协议-主机-端口，三者都相同，为同源</p>
+<p>2.跨域：上述上个，有一个不同，则为跨域</p>
+</blockquote>
+<p>四、跨域传输数据，有什么方式？或者说由前端还是后端解决？</p>
+<blockquote>
+<p>1.后端处理方法：设置权限，允许所有域名通过，比如 header(‘Access-Control-Allow-Origin:*’);</p>
+<p>2.前端处理方法：jsonp、web-sockets、cors、iframe</p>
+<p>3.参考文章：<a href="https://segmentfault.com/q/1010000006250875?_ea=1072719" target="_blank" rel="external">https://segmentfault.com/q/1010000006250875?_ea=1072719</a> <a href="https://github.com/rccoder/blog/issues/5" target="_blank" rel="external">https://github.com/rccoder/blog/issues/5</a></p>
+</blockquote>
+<p>五、一个较为完整的 ajax 例子，以及ajax各个参数的意思？</p>
+<ol>
+<li>看下图</li>
+</ol>
+<p><img src="http://i.imgur.com/O7lDl2Z.png" alt=""></p>
+<ol>
+<li>另外参考 <a href="http://www.w3school.com.cn/jquery/ajax_ajax.asp" target="_blank" rel="external">http://www.w3school.com.cn/jquery/ajax_ajax.asp</a></li>
+</ol>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/05/21/后端问题/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">ying</a></p>
+        <p><span>发布时间:</span>2017-05-21, 01:31:57</p>
+        <p><span>最后更新:</span>2017-05-21, 01:39:14</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/21/后端问题/" title="">http://yoursite.com/2017/05/21/后端问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/21/后端问题/　　作者: ying" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/19/前端面试问题/">
+                    
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/05/19/前端面试问题/" class="archive-article-date">
-      <time datetime="2017-05-19T08:16:17.951Z" itemprop="datePublished">05-19</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-        <div class="article-info info-on-archive">
-          
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| Yeing.lx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/19/前端面试问题/" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/21/后端问题/">后端问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/前端面试问题/">前端面试问题</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
