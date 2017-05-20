@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/19/前端面试问题/index.html">
 <meta property="og:site_name" content="Yeing.lx">
 <meta property="og:description" content="1.form中的input可以设置为readonly和disable，请问2者有什么区别？ readonly是为只读, input框value值用户不可修改。  disable:是为禁用，input框不可用,用户不可点击。 2.希望获取到页面中所有的checkbox怎么做？ &amp;lt;script&amp;gt;         var oCh = $(&amp;#39;:checkbox&amp;#39;);     &amp;">
-<meta property="og:updated_time" content="2017-05-20T18:00:13.349Z">
+<meta property="og:updated_time" content="2017-05-20T18:08:36.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yeing.lx">
 <meta name="twitter:description" content="1.form中的input可以设置为readonly和disable，请问2者有什么区别？ readonly是为只读, input框value值用户不可修改。  disable:是为禁用，input框不可用,用户不可点击。 2.希望获取到页面中所有的checkbox怎么做？ &amp;lt;script&amp;gt;         var oCh = $(&amp;#39;:checkbox&amp;#39;);     &amp;">
@@ -341,7 +341,7 @@ foo和bar都是bool型变量,只要foo或者bar有一个为真，那么这个表
 </code></pre><blockquote>
 <p>结果：undefined , 2;<br>    原理：undefined,因为函数内的varfoo把外头的给覆盖了。相当于有一个 var foo;在一个函数内任何地方声明的var都会被提到函数的最开头。</p>
 </blockquote>
-<p>9.如何垂直居中一个<img></p>
+<p>9.如何垂直居中一个</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -428,12 +428,18 @@ Math.max()
 （2）jsonp的原理，是通过callback参数给服务器端，然后服务端返回数据时会将这个callback参数作为函数    名来包裹住JSON数据
 （3）ajax和jsonp不同，ajax用的是xmlHttpRequest技术，jsonp用的是callback参数作为函数名来包裹住JSO    N数据
 </code></pre><p>17.常用浏览器内核</p>
-<pre><code>webkit(Safari、Chrome) 
-gecko(Mozilla Firefox)
-Trident(IE内核)
-Presto(Opera)
-blink(chromium)
-</code></pre><p>18.img标签上title与alt属性的区别是什么?<br>    答：<br>        alt表示_图片加载失败时候的替代文字<br>        title表示鼠标悬停在图片上显示出的标题文字</p>
+<ol>
+<li>webkit(Safari、Chrome) </li>
+<li>gecko(Mozilla Firefox)</li>
+<li>Trident(IE内核)</li>
+<li>Presto(Opera)</li>
+<li>blink(chromium)</li>
+</ol>
+<p>18.img标签上title与alt属性的区别是什么?</p>
+<blockquote>
+<p>alt表示_图片加载失败时候的替代文字</p>
+<p>title表示鼠标悬停在图片上显示出的标题文字</p>
+</blockquote>
 <p>19.JavaScript中如何对一个对象进行深度clone</p>
 <pre><code>&lt;script&gt;
     function cloneObj(oldObj){
@@ -469,7 +475,9 @@ blink(chromium)
 <p>区别：a. 优雅降级是从复杂的现状开始，并试图减少用户体验的供给;<br>b. 渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要;<br>c. 降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带;</p>
 </blockquote>
 <p>22.一次完整的HTTP事务是怎样的一个过程，常见的状态码有哪些？</p>
+<blockquote>
 <p>1,域名解析 –2,发起TCP的3次握手 –3,建立TCP连接后发起http请求 –4,服务器响应http请求，浏览器得到html代码 –5,浏览器解析html代码，并请求html代码中的资源（如js、css、图片等） –6,浏览器对页面进行渲染呈现给用户</p>
+</blockquote>
 <pre><code>常见HTTP状态码:
     200 OK         
         一切正常，对GET和POST请求的应答文档跟在后面
@@ -534,7 +542,7 @@ blink(chromium)
         <p><span>本文标题:</span><a href="/2017/05/19/前端面试问题/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">ying</a></p>
         <p><span>发布时间:</span>2017-05-19, 16:16:17</p>
-        <p><span>最后更新:</span>2017-05-21, 02:00:13</p>
+        <p><span>最后更新:</span>2017-05-21, 02:08:36</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/05/19/前端面试问题/" title="">http://yoursite.com/2017/05/19/前端面试问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/19/前端面试问题/　　作者: ying" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
