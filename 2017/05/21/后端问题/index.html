@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="一、有接触过后端语言么？谈谈你前后端的理解？  1.接触过，php，技术体系是wamp - windows apache mysql php 2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据 3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。  二、前端与">
+<meta name="description" content="HTML与XHTML——二者有什么区别 XHTML 元素必须被正确地嵌套 XHTML 元素必须被关闭，空标签也必须被关闭，如 &amp;lt;br&amp;gt; 必须写成 &amp;lt;br /&amp;gt; XHTML 标签名必须用小写字母 XHTML 文档必须拥有根元素 XHTML 文档要求给所有属性赋一个值 XHTML 要求所有的属性必须用引号&amp;quot;&amp;quot;括起来 XHTML 文档需要把所有 &amp;lt; 、&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yeing.lx">
 <meta property="og:url" content="http://yoursite.com/2017/05/21/后端问题/index.html">
 <meta property="og:site_name" content="Yeing.lx">
-<meta property="og:description" content="一、有接触过后端语言么？谈谈你前后端的理解？  1.接触过，php，技术体系是wamp - windows apache mysql php 2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据 3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。  二、前端与">
+<meta property="og:description" content="HTML与XHTML——二者有什么区别 XHTML 元素必须被正确地嵌套 XHTML 元素必须被关闭，空标签也必须被关闭，如 &amp;lt;br&amp;gt; 必须写成 &amp;lt;br /&amp;gt; XHTML 标签名必须用小写字母 XHTML 文档必须拥有根元素 XHTML 文档要求给所有属性赋一个值 XHTML 要求所有的属性必须用引号&amp;quot;&amp;quot;括起来 XHTML 文档需要把所有 &amp;lt; 、&amp;">
 <meta property="og:image" content="http://i.imgur.com/O7lDl2Z.png">
-<meta property="og:updated_time" content="2017-05-20T17:39:14.239Z">
+<meta property="og:updated_time" content="2017-05-21T15:36:44.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yeing.lx">
-<meta name="twitter:description" content="一、有接触过后端语言么？谈谈你前后端的理解？  1.接触过，php，技术体系是wamp - windows apache mysql php 2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据 3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。  二、前端与">
+<meta name="twitter:description" content="HTML与XHTML——二者有什么区别 XHTML 元素必须被正确地嵌套 XHTML 元素必须被关闭，空标签也必须被关闭，如 &amp;lt;br&amp;gt; 必须写成 &amp;lt;br /&amp;gt; XHTML 标签名必须用小写字母 XHTML 文档必须拥有根元素 XHTML 文档要求给所有属性赋一个值 XHTML 要求所有的属性必须用引号&amp;quot;&amp;quot;括起来 XHTML 文档需要把所有 &amp;lt; 、&amp;">
 <meta name="twitter:image" content="http://i.imgur.com/O7lDl2Z.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -280,7 +280,43 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>一、有接触过后端语言么？谈谈你前后端的理解？</p>
+        <p>HTML与XHTML——二者有什么区别</p>
+<pre><code>XHTML 元素必须被正确地嵌套
+XHTML 元素必须被关闭，空标签也必须被关闭，如 &lt;br&gt; 必须写成 &lt;br /&gt;
+XHTML 标签名必须用小写字母
+XHTML 文档必须拥有根元素
+XHTML 文档要求给所有属性赋一个值
+XHTML 要求所有的属性必须用引号&quot;&quot;括起来
+XHTML 文档需要把所有 &lt; 、&gt;、&amp; 等特殊符号用编码表示
+XHTML 文档不要在注释内容中使“--”
+XHTML 图片必须有说明文字
+XHTML 文档中用id属性代替name属性
+</code></pre><p> 代码</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;utf-8&quot;&gt;
+      &lt;title&gt;Backbone Demo&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;h1&gt;Backbone Routing Demo&lt;/h1&gt;
+
+      &lt;ul id=&quot;menu&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Index&lt;/a&gt;&lt;&gt;
+        &lt;li&gt;&lt;a href=&quot;#show/1&quot;&gt;Show&lt;/a&gt;&lt;&gt;
+        &lt;li&gt;&lt;a href=&quot;#download/1&quot;&gt;Download&lt;/a&gt;&lt;&gt;
+        &lt;li&gt;&lt;a href=&quot;#search/1&quot;&gt;Search&lt;/a&gt;&lt;&gt;
+        &lt;li&gt;&lt;a href=&quot;#other&quot;&gt;Other&lt;/a&gt;&lt;&gt;
+      &lt;/ul&gt;
+
+    &lt;script src=&quot;js/underscore.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/backbone.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+</code></pre><p>一、有接触过后端语言么？谈谈你前后端的理解？</p>
 <blockquote>
 <p>1.接触过，php，技术体系是wamp - windows apache mysql php</p>
 <p>2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据</p>
@@ -321,7 +357,7 @@
         <p><span>本文标题:</span><a href="/2017/05/21/后端问题/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">ying</a></p>
         <p><span>发布时间:</span>2017-05-21, 01:31:57</p>
-        <p><span>最后更新:</span>2017-05-21, 01:39:14</p>
+        <p><span>最后更新:</span>2017-05-21, 23:36:44</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/05/21/后端问题/" title="">http://yoursite.com/2017/05/21/后端问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/21/后端问题/　　作者: ying" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
