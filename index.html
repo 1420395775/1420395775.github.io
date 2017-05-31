@@ -263,6 +263,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-前端兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/31/前端兼容问题/" class="article-date">
+      <time datetime="2017-05-31T06:51:25.818Z" itemprop="datePublished">2017-05-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li>页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。</li>
+</ul>
+<ul>
+<li>用CSS HACK 来改写CSS代码    <blockquote>
+<p> 改写前：xxx. yyy:{width:600px;} </p>
+<p> (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590px，则IE6下正常，IE7和Firefox下显示不完美) </p>
+<p>  改写后： xxx. yyy{width:600px; <em> width:600px; _ width:590px;}<br>  （Firefox不认识 </em> 和<em>，而IE都认识 *，IE7不支持 </em> ，IE6支持<em> ）   顺序千万不要乱，因为当出现重复定义时，浏览器默认按最后一下渲染，所以一    定要先正常，再 *，最后 </em> 。   </p>
+<p>  这样Firefox读取时只看到了正常的定义，而IE都能看到第二个 <em> 的定义，于是忽    略第一个正常的定义，而IE中因为IE7不再支持_，所以按照第一个带 </em> 号的执行，IE6支持_，所    以认为带*后的也是重复定义，予以忽略，执行最后一个定义。   </p>
+<p>   有人喜欢用!important来进行CSS HACK，但我觉得!important写起来太长了，不    如 <em> 和_简单直观。    只要记住IE7= </em>，IE6= _ ，然后按照先Firefox后IE7，最后IE6的顺序进行编写，    一般就可以保证大部分用户浏览正常了。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>IE下很多地方可以省略一些层定义的浮动属性,但是FF不行,必须每个个层都写清楚,几个DIV层水    平排列的时候,IE6中必须要加display:inline;,不然前端会出现双倍间距,而FF中则加不加    display都显示正常.这些都是由浏览器默认值的不同而引起的,你看到那些大站的布局在各浏览    器中都显示正常,是因为他们把这些默认有区别的地方都定义清楚了.    下面的兼容要点引自互联网    CSS对浏览器的兼容性具有很高的要求，通常情况下IE和Firefox(简称FF)存在很大的解析差异，    </li>
+</ul>
+<ul>
+<li>常见的兼容问题：   </li>
+</ul>
+<blockquote>
+<p> 1.DOCTYPE影响CSS处理<br>     2.FireFox火狐: div设置margin-left,margin-right为auto时已经居中,IE不行<br>     3.FireFox火狐: body设置text-align时,div需要设置margin:auto(主要是margin-left,margin-    right)方可居中<br>     4.FireFox火狐:设置padding后,div会增加height和width,但IE不会,故需要用!important多设一    个height和width<br>     5.FireFox火狐:支持!important,IE则忽略,可用!important为FireFox火狐特别设置样式<br>     6.div的垂直居中问题:vertical-align:middle;将行距增加到和整个DIV一样高line-    height:200px;然后插入文字，就垂直居中了。缺点是要控制内容不要换行<br>     7.cursor:pointer可以同时在IEFireFox火狐中显示游标手指状，hand仅IE可以<br>     8.FireFox火狐:链接加边框和背景色，需设置display:block,同时设置float:left保证不换行。    参照menubar,给a和menubar设置高度是为了避免底边显示错位,若不设height,可以在menubar中    插入一个空格。<br>     9.在mozillafirefox和IE中的BOX模型解释不一致导致相差2px解决方法：  div{margin:30px!important;margin:28px;}   注意这两个margin的顺序一定不能写反，据阿捷的说法!important这个属性IE不能识别，但别的    浏览器可以识别。所以在IE下其实解释成这样：  div{maring:30px;margin:28px}   重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx!important;<br>    10.IE5和IE6的BOX解释不一致 IE5下<br>    div{width:300px;margin:0 10px 0 10px;}<br>    div的宽度会被解释为300px-10px(右填充)-10px(左填充)最终div的宽度为280px，adding:0;}就能解决大部分问题  html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input { margin: 0; padding: 0; }  </p>
+</blockquote>
+<p>*h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th { font-size: 1em; font-weight: normal; font-style: normal; } ………… </p>
+<p> 这段代码就很好的诠释了我上面矛盾的话，或许你现在暂时不知道它的用处，但你研究之后就会发现很有意思。  上面这段代码几乎是我们每次编写过程中都要接触和更改的内容，既然每次都一样重复的工作，为什么不提前就准备好呢。先不说设计一套属于自己的CSS框架，哪管把上面的内容放在一个记事本里，用的时候复制进去都比重新写，快乐，轻松，有效率的多。这样的代码不止这些，更多的你可以自己的总结，发现，那样比较有乐趣。  既然要提到效率，不得不提到CSS框架的善用，合理利用。像Blueprint CSS，雅虎的YUI，Elements CSS Frameworks等等，你花多少时间去理解它们都行，不要担心这是无用的分析过程，之后你会提高很多。万变不离其宗，当你把CSS框架搭好，剩下的，只是每次布局上的变动，和细微处的调节过程，而不再是一切从0开始……  在百度知道上我曾经说早先用IEtest的时候有BUG，当时被人一顿埋汰……  我好多同学，同时用了很久的是Multiple IEs，他们都说是用过最稳定的一款软件。但遗憾的是直到现在，官方也没有更新过，仍然停留在IE6而已。不过你们不防用用试试。  关于BUG和CSS HACK。不知道你接触过IE6以下的版本没有，那些，才是所谓的BUG，另人莫名其妙的BUG，每次编写前需要先修订这些BUG。目前来说，个人觉得没有什么BUG可言。  至于CSS HACK，凡是有经验的人都知道善用而不是滥用。我觉得它更像一块补丁，如果你自己裁剪衣服没裁剪好，而想着用后期用补丁修补，这和亡羊补牢没什么区别。 最开始就应该打下坚实的基础我始终坚信，在编写的代码符合嵌套规则，语义化，符合WEB标准的前提下，你把代码放在裤裆里显示，浏览器之间的差异也不会太大。只有当自己的代码不符合标准的时候，才会出现各种差异。  最注意的是，当差异很小的时候，不要太追求完美，严谨，过的去就可以，花3，4行代码去修正1像素的差异，得不偿失*。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-前端面试问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

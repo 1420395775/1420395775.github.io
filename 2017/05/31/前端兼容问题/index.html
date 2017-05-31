@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="ying" />
+
+
+
+<meta name="description" content="页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。   用CSS HACK 来改写CSS代码      改写前：xxx. yyy:{width:600px;}   (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yeing.lx">
+<meta property="og:url" content="http://yoursite.com/2017/05/31/前端兼容问题/index.html">
+<meta property="og:site_name" content="Yeing.lx">
+<meta property="og:description" content="页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。   用CSS HACK 来改写CSS代码      改写前：xxx. yyy:{width:600px;}   (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590">
+<meta property="og:updated_time" content="2017-05-31T08:27:22.336Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Yeing.lx">
+<meta name="twitter:description" content="页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。   用CSS HACK 来改写CSS代码      改写前：xxx. yyy:{width:600px;}   (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Yeing.lx" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Yeing.lx</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/xx.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">ying</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/1420395775@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/1420395775/1420395775.github.io.git" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 网易云音乐" href="https://www.baidu.com/link?url=YcMxC9Fp1zz5kRlP-Em8frgUZH1k4M4KkXBpdqslL2y&wd=&eqid=e5d5b6e4000d8f2a00000006592075ea" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">ying</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/xx.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">ying</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/1420395775@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/1420395775/1420395775.github.io.git" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="https://www.baidu.com/link?url=YcMxC9Fp1zz5kRlP-Em8frgUZH1k4M4KkXBpdqslL2y&wd=&eqid=e5d5b6e4000d8f2a00000006592075ea" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-前端兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/31/前端兼容问题/" class="article-date">
+      <time datetime="2017-05-31T06:51:25.818Z" itemprop="datePublished">2017-05-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li>页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。</li>
+</ul>
+<ul>
+<li>用CSS HACK 来改写CSS代码    <blockquote>
+<p> 改写前：xxx. yyy:{width:600px;} </p>
+<p> (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590px，则IE6下正常，IE7和Firefox下显示不完美) </p>
+<p>  改写后： xxx. yyy{width:600px; <em> width:600px; _ width:590px;}<br>  （Firefox不认识 </em> 和<em>，而IE都认识 *，IE7不支持 </em> ，IE6支持<em> ）   顺序千万不要乱，因为当出现重复定义时，浏览器默认按最后一下渲染，所以一    定要先正常，再 *，最后 </em> 。   </p>
+<p>  这样Firefox读取时只看到了正常的定义，而IE都能看到第二个 <em> 的定义，于是忽    略第一个正常的定义，而IE中因为IE7不再支持_，所以按照第一个带 </em> 号的执行，IE6支持_，所    以认为带*后的也是重复定义，予以忽略，执行最后一个定义。   </p>
+<p>   有人喜欢用!important来进行CSS HACK，但我觉得!important写起来太长了，不    如 <em> 和_简单直观。    只要记住IE7= </em>，IE6= _ ，然后按照先Firefox后IE7，最后IE6的顺序进行编写，    一般就可以保证大部分用户浏览正常了。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>IE下很多地方可以省略一些层定义的浮动属性,但是FF不行,必须每个个层都写清楚,几个DIV层水    平排列的时候,IE6中必须要加display:inline;,不然前端会出现双倍间距,而FF中则加不加    display都显示正常.这些都是由浏览器默认值的不同而引起的,你看到那些大站的布局在各浏览    器中都显示正常,是因为他们把这些默认有区别的地方都定义清楚了.    下面的兼容要点引自互联网    CSS对浏览器的兼容性具有很高的要求，通常情况下IE和Firefox(简称FF)存在很大的解析差异，    </li>
+</ul>
+<ul>
+<li>常见的兼容问题：   </li>
+</ul>
+<blockquote>
+<p> 1.DOCTYPE影响CSS处理<br>     2.FireFox火狐: div设置margin-left,margin-right为auto时已经居中,IE不行<br>     3.FireFox火狐: body设置text-align时,div需要设置margin:auto(主要是margin-left,margin-    right)方可居中<br>     4.FireFox火狐:设置padding后,div会增加height和width,但IE不会,故需要用!important多设一    个height和width<br>     5.FireFox火狐:支持!important,IE则忽略,可用!important为FireFox火狐特别设置样式<br>     6.div的垂直居中问题:vertical-align:middle;将行距增加到和整个DIV一样高line-    height:200px;然后插入文字，就垂直居中了。缺点是要控制内容不要换行<br>     7.cursor:pointer可以同时在IEFireFox火狐中显示游标手指状，hand仅IE可以<br>     8.FireFox火狐:链接加边框和背景色，需设置display:block,同时设置float:left保证不换行。    参照menubar,给a和menubar设置高度是为了避免底边显示错位,若不设height,可以在menubar中    插入一个空格。<br>     9.在mozillafirefox和IE中的BOX模型解释不一致导致相差2px解决方法：  div{margin:30px!important;margin:28px;}   注意这两个margin的顺序一定不能写反，据阿捷的说法!important这个属性IE不能识别，但别的    浏览器可以识别。所以在IE下其实解释成这样：  div{maring:30px;margin:28px}   重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx!important;<br>    10.IE5和IE6的BOX解释不一致 IE5下<br>    div{width:300px;margin:0 10px 0 10px;}<br>    div的宽度会被解释为300px-10px(右填充)-10px(左填充)最终div的宽度为280px，adding:0;}就能解决大部分问题  html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input { margin: 0; padding: 0; }  </p>
+</blockquote>
+<p>*h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th { font-size: 1em; font-weight: normal; font-style: normal; } ………… </p>
+<p> 这段代码就很好的诠释了我上面矛盾的话，或许你现在暂时不知道它的用处，但你研究之后就会发现很有意思。  上面这段代码几乎是我们每次编写过程中都要接触和更改的内容，既然每次都一样重复的工作，为什么不提前就准备好呢。先不说设计一套属于自己的CSS框架，哪管把上面的内容放在一个记事本里，用的时候复制进去都比重新写，快乐，轻松，有效率的多。这样的代码不止这些，更多的你可以自己的总结，发现，那样比较有乐趣。  既然要提到效率，不得不提到CSS框架的善用，合理利用。像Blueprint CSS，雅虎的YUI，Elements CSS Frameworks等等，你花多少时间去理解它们都行，不要担心这是无用的分析过程，之后你会提高很多。万变不离其宗，当你把CSS框架搭好，剩下的，只是每次布局上的变动，和细微处的调节过程，而不再是一切从0开始……  在百度知道上我曾经说早先用IEtest的时候有BUG，当时被人一顿埋汰……  我好多同学，同时用了很久的是Multiple IEs，他们都说是用过最稳定的一款软件。但遗憾的是直到现在，官方也没有更新过，仍然停留在IE6而已。不过你们不防用用试试。  关于BUG和CSS HACK。不知道你接触过IE6以下的版本没有，那些，才是所谓的BUG，另人莫名其妙的BUG，每次编写前需要先修订这些BUG。目前来说，个人觉得没有什么BUG可言。  至于CSS HACK，凡是有经验的人都知道善用而不是滥用。我觉得它更像一块补丁，如果你自己裁剪衣服没裁剪好，而想着用后期用补丁修补，这和亡羊补牢没什么区别。 最开始就应该打下坚实的基础我始终坚信，在编写的代码符合嵌套规则，语义化，符合WEB标准的前提下，你把代码放在裤裆里显示，浏览器之间的差异也不会太大。只有当自己的代码不符合标准的时候，才会出现各种差异。  最注意的是，当差异很小的时候，不要太追求完美，严谨，过的去就可以，花3，4行代码去修正1像素的差异，得不偿失*。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/05/31/前端兼容问题/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">ying</a></p>
+        <p><span>发布时间:</span>2017-05-31, 14:51:25</p>
+        <p><span>最后更新:</span>2017-05-31, 16:27:22</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/31/前端兼容问题/" title="">http://yoursite.com/2017/05/31/前端兼容问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/31/前端兼容问题/　　作者: ying" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/19/前端面试问题/">
+                    
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| Yeing.lx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/19/前端面试问题/" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/前端兼容问题/">前端兼容问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/前端面试问题/">前端面试问题</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017 ying
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
