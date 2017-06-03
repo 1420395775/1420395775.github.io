@@ -15,13 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。   用CSS HACK 来改写CSS代码      改写前：xxx. yyy:{width:600px;}   (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yeing.lx">
+<meta property="og:url" content="http://yoursite.com/2017/05/31/前端兼容/index.html">
 <meta property="og:site_name" content="Yeing.lx">
-<meta property="og:updated_time" content="2017-05-20T16:13:37.215Z">
+<meta property="og:description" content="页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。   用CSS HACK 来改写CSS代码      改写前：xxx. yyy:{width:600px;}   (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590">
+<meta property="og:updated_time" content="2017-05-31T08:27:22.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="Yeing.lx">
+<meta name="twitter:description" content="页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。   用CSS HACK 来改写CSS代码      改写前：xxx. yyy:{width:600px;}   (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>tags | Yeing.lx</title>
+<title>Yeing.lx</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,7 +66,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -257,11 +260,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-前端兼容" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-05-20T16:13:37.000Z" itemprop="datePublished">2017-05-21</time>
+      <a href="/2017/05/31/前端兼容/" class="article-date">
+      <time datetime="2017-05-31T06:51:25.818Z" itemprop="datePublished">2017-05-31</time>
 </a>
 
 
@@ -272,117 +275,99 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      tags
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <ul>
+<li>页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。</li>
+</ul>
+<ul>
+<li>用CSS HACK 来改写CSS代码    <blockquote>
+<p> 改写前：xxx. yyy:{width:600px;} </p>
+<p> (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590px，则IE6下正常，IE7和Firefox下显示不完美) </p>
+<p>  改写后： xxx. yyy{width:600px; <em> width:600px; _ width:590px;}<br>  （Firefox不认识 </em> 和<em>，而IE都认识 *，IE7不支持 </em> ，IE6支持<em> ）   顺序千万不要乱，因为当出现重复定义时，浏览器默认按最后一下渲染，所以一    定要先正常，再 *，最后 </em> 。   </p>
+<p>  这样Firefox读取时只看到了正常的定义，而IE都能看到第二个 <em> 的定义，于是忽    略第一个正常的定义，而IE中因为IE7不再支持_，所以按照第一个带 </em> 号的执行，IE6支持_，所    以认为带*后的也是重复定义，予以忽略，执行最后一个定义。   </p>
+<p>   有人喜欢用!important来进行CSS HACK，但我觉得!important写起来太长了，不    如 <em> 和_简单直观。    只要记住IE7= </em>，IE6= _ ，然后按照先Firefox后IE7，最后IE6的顺序进行编写，    一般就可以保证大部分用户浏览正常了。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>IE下很多地方可以省略一些层定义的浮动属性,但是FF不行,必须每个个层都写清楚,几个DIV层水    平排列的时候,IE6中必须要加display:inline;,不然前端会出现双倍间距,而FF中则加不加    display都显示正常.这些都是由浏览器默认值的不同而引起的,你看到那些大站的布局在各浏览    器中都显示正常,是因为他们把这些默认有区别的地方都定义清楚了.    下面的兼容要点引自互联网    CSS对浏览器的兼容性具有很高的要求，通常情况下IE和Firefox(简称FF)存在很大的解析差异，    </li>
+</ul>
+<ul>
+<li>常见的兼容问题：   </li>
+</ul>
+<blockquote>
+<p> 1.DOCTYPE影响CSS处理<br>     2.FireFox火狐: div设置margin-left,margin-right为auto时已经居中,IE不行<br>     3.FireFox火狐: body设置text-align时,div需要设置margin:auto(主要是margin-left,margin-    right)方可居中<br>     4.FireFox火狐:设置padding后,div会增加height和width,但IE不会,故需要用!important多设一    个height和width<br>     5.FireFox火狐:支持!important,IE则忽略,可用!important为FireFox火狐特别设置样式<br>     6.div的垂直居中问题:vertical-align:middle;将行距增加到和整个DIV一样高line-    height:200px;然后插入文字，就垂直居中了。缺点是要控制内容不要换行<br>     7.cursor:pointer可以同时在IEFireFox火狐中显示游标手指状，hand仅IE可以<br>     8.FireFox火狐:链接加边框和背景色，需设置display:block,同时设置float:left保证不换行。    参照menubar,给a和menubar设置高度是为了避免底边显示错位,若不设height,可以在menubar中    插入一个空格。<br>     9.在mozillafirefox和IE中的BOX模型解释不一致导致相差2px解决方法：  div{margin:30px!important;margin:28px;}   注意这两个margin的顺序一定不能写反，据阿捷的说法!important这个属性IE不能识别，但别的    浏览器可以识别。所以在IE下其实解释成这样：  div{maring:30px;margin:28px}   重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx!important;<br>    10.IE5和IE6的BOX解释不一致 IE5下<br>    div{width:300px;margin:0 10px 0 10px;}<br>    div的宽度会被解释为300px-10px(右填充)-10px(左填充)最终div的宽度为280px，adding:0;}就能解决大部分问题  html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input { margin: 0; padding: 0; }  </p>
+</blockquote>
+<p>*h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th { font-size: 1em; font-weight: normal; font-style: normal; } ………… </p>
+<p> 这段代码就很好的诠释了我上面矛盾的话，或许你现在暂时不知道它的用处，但你研究之后就会发现很有意思。  上面这段代码几乎是我们每次编写过程中都要接触和更改的内容，既然每次都一样重复的工作，为什么不提前就准备好呢。先不说设计一套属于自己的CSS框架，哪管把上面的内容放在一个记事本里，用的时候复制进去都比重新写，快乐，轻松，有效率的多。这样的代码不止这些，更多的你可以自己的总结，发现，那样比较有乐趣。  既然要提到效率，不得不提到CSS框架的善用，合理利用。像Blueprint CSS，雅虎的YUI，Elements CSS Frameworks等等，你花多少时间去理解它们都行，不要担心这是无用的分析过程，之后你会提高很多。万变不离其宗，当你把CSS框架搭好，剩下的，只是每次布局上的变动，和细微处的调节过程，而不再是一切从0开始……  在百度知道上我曾经说早先用IEtest的时候有BUG，当时被人一顿埋汰……  我好多同学，同时用了很久的是Multiple IEs，他们都说是用过最稳定的一款软件。但遗憾的是直到现在，官方也没有更新过，仍然停留在IE6而已。不过你们不防用用试试。  关于BUG和CSS HACK。不知道你接触过IE6以下的版本没有，那些，才是所谓的BUG，另人莫名其妙的BUG，每次编写前需要先修订这些BUG。目前来说，个人觉得没有什么BUG可言。  至于CSS HACK，凡是有经验的人都知道善用而不是滥用。我觉得它更像一块补丁，如果你自己裁剪衣服没裁剪好，而想着用后期用补丁修补，这和亡羊补牢没什么区别。 最开始就应该打下坚实的基础我始终坚信，在编写的代码符合嵌套规则，语义化，符合WEB标准的前提下，你把代码放在裤裆里显示，浏览器之间的差异也不会太大。只有当自己的代码不符合标准的时候，才会出现各种差异。  最注意的是，当差异很小的时候，不要太追求完美，严谨，过的去就可以，花3，4行代码去修正1像素的差异，得不偿失*。</p>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-
-
-<p class="count"></p>
-
-<div class="tags">
-    
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-         <span><script>document.write($(".category-list-item").length)</script></span>Categories,
-         <span><script>document.write($(".tags > a").length)</script></span>Tags
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/05/31/前端兼容/"></a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">ying</a></p>
+        <p><span>Created:</span>2017-05-31, 14:51:25</p>
+        <p><span>Updated:</span>2017-05-31, 16:27:22</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/05/31/前端兼容/" title="">http://yoursite.com/2017/05/31/前端兼容/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/05/31/前端兼容/　　By ying" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/06/03/js性能优化/">
+                    
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/19/前端面试问题/">
+                    
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
 
@@ -400,7 +385,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"tags　| Yeing.lx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"　| Yeing.lx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -415,6 +400,26 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/06/03/js性能优化/" title="Pre: ">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/19/前端面试问题/" title="Next: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/js性能优化/">js性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/前端兼容/">前端兼容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/前端面试问题/">前端面试问题</a></li></ul>
 
 
 

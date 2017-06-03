@@ -14,16 +14,17 @@
 <meta name="author" content="ying" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
+<meta name="description" content="JavaScript性能优化小知识总结前言一直在学习javascript，也有看过《犀利开发Jquery内核详解与实践》，对这本书的评价只有两个字犀利，可能是对javascript理解的还不够透彻异或是自己太笨，更多的是自己不擅于思考懒得思考以至于里面说的一些精髓都没有太深入的理解。 鉴于想让自己有一个提升，进不了一个更加广阔的天地，总得找一个属于自己的居所好好生存，所以平时会有意无意的去积累一些">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Yeing.lx">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/js性能优化/index.html">
 <meta property="og:site_name" content="Yeing.lx">
+<meta property="og:description" content="JavaScript性能优化小知识总结前言一直在学习javascript，也有看过《犀利开发Jquery内核详解与实践》，对这本书的评价只有两个字犀利，可能是对javascript理解的还不够透彻异或是自己太笨，更多的是自己不擅于思考懒得思考以至于里面说的一些精髓都没有太深入的理解。 鉴于想让自己有一个提升，进不了一个更加广阔的天地，总得找一个属于自己的居所好好生存，所以平时会有意无意的去积累一些">
+<meta property="og:updated_time" content="2017-06-03T09:13:09.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yeing.lx">
+<meta name="twitter:description" content="JavaScript性能优化小知识总结前言一直在学习javascript，也有看过《犀利开发Jquery内核详解与实践》，对这本书的评价只有两个字犀利，可能是对javascript理解的还不够透彻异或是自己太笨，更多的是自己不擅于思考懒得思考以至于里面说的一些精髓都没有太深入的理解。 鉴于想让自己有一个提升，进不了一个更加广阔的天地，总得找一个属于自己的居所好好生存，所以平时会有意无意的去积累一些">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,8 +52,6 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -66,8 +65,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -261,9 +260,7 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-js性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js性能优化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/06/03/js性能优化/" class="article-date">
@@ -951,474 +948,85 @@ else {
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/06/03/js性能优化/"></a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">ying</a></p>
+        <p><span>Created:</span>2017-06-03, 17:07:03</p>
+        <p><span>Updated:</span>2017-06-03, 17:13:09</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/06/03/js性能优化/" title="">http://yoursite.com/2017/06/03/js性能优化/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/06/03/js性能优化/　　By ying" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/31/前端兼容/">
+                    
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-前端兼容" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/31/前端兼容/" class="article-date">
-      <time datetime="2017-05-31T06:51:25.818Z" itemprop="datePublished">2017-05-31</time>
-</a>
-
-
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript性能优化小知识总结"><span class="toc-number">1.</span> <span class="toc-text">JavaScript性能优化小知识总结</span></a></li></ol>
+        
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ul>
-<li>页面乱的原因是因为IE6认为一个DIV超宽了，所以把本应float;right的DIV挤了下去。而如果设置为IE6下显示正常的宽度，则在IE7和Firefox下看页面就会少了一块一样，也很别扭。</li>
-</ul>
-<ul>
-<li>用CSS HACK 来改写CSS代码    <blockquote>
-<p> 改写前：xxx. yyy:{width:600px;} </p>
-<p> (当设为IE7和Firefox下显示正常的600px时    ，IE6下会错位，改为590px，则IE6下正常，IE7和Firefox下显示不完美) </p>
-<p>  改写后： xxx. yyy{width:600px; <em> width:600px; _ width:590px;}<br>  （Firefox不认识 </em> 和<em>，而IE都认识 *，IE7不支持 </em> ，IE6支持<em> ）   顺序千万不要乱，因为当出现重复定义时，浏览器默认按最后一下渲染，所以一    定要先正常，再 *，最后 </em> 。   </p>
-<p>  这样Firefox读取时只看到了正常的定义，而IE都能看到第二个 <em> 的定义，于是忽    略第一个正常的定义，而IE中因为IE7不再支持_，所以按照第一个带 </em> 号的执行，IE6支持_，所    以认为带*后的也是重复定义，予以忽略，执行最后一个定义。   </p>
-<p>   有人喜欢用!important来进行CSS HACK，但我觉得!important写起来太长了，不    如 <em> 和_简单直观。    只要记住IE7= </em>，IE6= _ ，然后按照先Firefox后IE7，最后IE6的顺序进行编写，    一般就可以保证大部分用户浏览正常了。</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>IE下很多地方可以省略一些层定义的浮动属性,但是FF不行,必须每个个层都写清楚,几个DIV层水    平排列的时候,IE6中必须要加display:inline;,不然前端会出现双倍间距,而FF中则加不加    display都显示正常.这些都是由浏览器默认值的不同而引起的,你看到那些大站的布局在各浏览    器中都显示正常,是因为他们把这些默认有区别的地方都定义清楚了.    下面的兼容要点引自互联网    CSS对浏览器的兼容性具有很高的要求，通常情况下IE和Firefox(简称FF)存在很大的解析差异，    </li>
-</ul>
-<ul>
-<li>常见的兼容问题：   </li>
-</ul>
-<blockquote>
-<p> 1.DOCTYPE影响CSS处理<br>     2.FireFox火狐: div设置margin-left,margin-right为auto时已经居中,IE不行<br>     3.FireFox火狐: body设置text-align时,div需要设置margin:auto(主要是margin-left,margin-    right)方可居中<br>     4.FireFox火狐:设置padding后,div会增加height和width,但IE不会,故需要用!important多设一    个height和width<br>     5.FireFox火狐:支持!important,IE则忽略,可用!important为FireFox火狐特别设置样式<br>     6.div的垂直居中问题:vertical-align:middle;将行距增加到和整个DIV一样高line-    height:200px;然后插入文字，就垂直居中了。缺点是要控制内容不要换行<br>     7.cursor:pointer可以同时在IEFireFox火狐中显示游标手指状，hand仅IE可以<br>     8.FireFox火狐:链接加边框和背景色，需设置display:block,同时设置float:left保证不换行。    参照menubar,给a和menubar设置高度是为了避免底边显示错位,若不设height,可以在menubar中    插入一个空格。<br>     9.在mozillafirefox和IE中的BOX模型解释不一致导致相差2px解决方法：  div{margin:30px!important;margin:28px;}   注意这两个margin的顺序一定不能写反，据阿捷的说法!important这个属性IE不能识别，但别的    浏览器可以识别。所以在IE下其实解释成这样：  div{maring:30px;margin:28px}   重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx!important;<br>    10.IE5和IE6的BOX解释不一致 IE5下<br>    div{width:300px;margin:0 10px 0 10px;}<br>    div的宽度会被解释为300px-10px(右填充)-10px(左填充)最终div的宽度为280px，adding:0;}就能解决大部分问题  html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input { margin: 0; padding: 0; }  </p>
-</blockquote>
-<p>*h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th { font-size: 1em; font-weight: normal; font-style: normal; } ………… </p>
-<p> 这段代码就很好的诠释了我上面矛盾的话，或许你现在暂时不知道它的用处，但你研究之后就会发现很有意思。  上面这段代码几乎是我们每次编写过程中都要接触和更改的内容，既然每次都一样重复的工作，为什么不提前就准备好呢。先不说设计一套属于自己的CSS框架，哪管把上面的内容放在一个记事本里，用的时候复制进去都比重新写，快乐，轻松，有效率的多。这样的代码不止这些，更多的你可以自己的总结，发现，那样比较有乐趣。  既然要提到效率，不得不提到CSS框架的善用，合理利用。像Blueprint CSS，雅虎的YUI，Elements CSS Frameworks等等，你花多少时间去理解它们都行，不要担心这是无用的分析过程，之后你会提高很多。万变不离其宗，当你把CSS框架搭好，剩下的，只是每次布局上的变动，和细微处的调节过程，而不再是一切从0开始……  在百度知道上我曾经说早先用IEtest的时候有BUG，当时被人一顿埋汰……  我好多同学，同时用了很久的是Multiple IEs，他们都说是用过最稳定的一款软件。但遗憾的是直到现在，官方也没有更新过，仍然停留在IE6而已。不过你们不防用用试试。  关于BUG和CSS HACK。不知道你接触过IE6以下的版本没有，那些，才是所谓的BUG，另人莫名其妙的BUG，每次编写前需要先修订这些BUG。目前来说，个人觉得没有什么BUG可言。  至于CSS HACK，凡是有经验的人都知道善用而不是滥用。我觉得它更像一块补丁，如果你自己裁剪衣服没裁剪好，而想着用后期用补丁修补，这和亡羊补牢没什么区别。 最开始就应该打下坚实的基础我始终坚信，在编写的代码符合嵌套规则，语义化，符合WEB标准的前提下，你把代码放在裤裆里显示，浏览器之间的差异也不会太大。只有当自己的代码不符合标准的时候，才会出现各种差异。  最注意的是，当差异很小的时候，不要太追求完美，严谨，过的去就可以，花3，4行代码去修正1像素的差异，得不偿失*。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-前端面试问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/19/前端面试问题/" class="article-date">
-      <time datetime="2017-05-19T08:16:17.951Z" itemprop="datePublished">2017-05-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>HTML与XHTML——二者有什么区别</p>
-<pre><code>XHTML 元素必须被正确地嵌套
-XHTML 元素必须被关闭，空标签也必须被关闭，如 &lt;br&gt; 必须写成 &lt;br /&gt;
-XHTML 标签名必须用小写字母
-XHTML 文档必须拥有根元素
-XHTML 文档要求给所有属性赋一个值
-XHTML 要求所有的属性必须用引号&quot;&quot;括起来
-XHTML 文档需要把所有 &lt; 、&gt;、&amp; 等特殊符号用编码表示
-XHTML 文档不要在注释内容中使“--”
-XHTML 图片必须有说明文字
-XHTML 文档中用id属性代替name属性
-</code></pre><p> 代码</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-      &lt;meta charset=&quot;utf-8&quot;&gt;
-      &lt;title&gt;Backbone Demo&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-
-    &lt;h1&gt;Backbone Routing Demo&lt;/h1&gt;
-
-      &lt;ul id=&quot;menu&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Index&lt;/a&gt;&lt;&gt;
-        &lt;li&gt;&lt;a href=&quot;#show/1&quot;&gt;Show&lt;/a&gt;&lt;&gt;
-        &lt;li&gt;&lt;a href=&quot;#download/1&quot;&gt;Download&lt;/a&gt;&lt;&gt;
-        &lt;li&gt;&lt;a href=&quot;#search/1&quot;&gt;Search&lt;/a&gt;&lt;&gt;
-        &lt;li&gt;&lt;a href=&quot;#other&quot;&gt;Other&lt;/a&gt;&lt;&gt;
-      &lt;/ul&gt;
-
-    &lt;script src=&quot;js/underscore.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;js/backbone.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
-
-&lt;/body&gt;
-</code></pre><p>一、有接触过后端语言么？谈谈你前后端的理解？</p>
-<blockquote>
-<p>1.接触过，php，技术体系是wamp - windows apache mysql php</p>
-<p>2.前端与后端两者的关系：前端负责收集和呈现数据，后端负责处理和存储数据</p>
-<p>3.对前后端分离的理解：比如 mvc，数据给 m 层处理，业务让 c 层控制，模版由 v 层管理。在写代码的时候，前后端工程师分工清楚，协同开发效率高，系统业务关系明确。</p>
-</blockquote>
-<p>二、前端与后端工程师配合工作，主要在哪些方面？</p>
-<blockquote>
-<p>1.前端给后端数据：form提交、ajax的data数据提交</p>
-<p>2.后端给前端数据：ajax的success返回、框架自带的模版引擎做数据渲染</p>
-</blockquote>
-<p>三、何为同源，何为跨域？</p>
-<blockquote>
-<p>1.同源：协议-主机-端口，三者都相同，为同源</p>
-<p>2.跨域：上述上个，有一个不同，则为跨域</p>
-</blockquote>
-<p>四、跨域传输数据，有什么方式？或者说由前端还是后端解决？</p>
-<blockquote>
-<p>1.后端处理方法：设置权限，允许所有域名通过，比如 header(‘Access-Control-Allow-Origin:*’);</p>
-<p>2.前端处理方法：jsonp、web-sockets、cors、iframe</p>
-<p>3.参考文章：<a href="https://segmentfault.com/q/1010000006250875?_ea=1072719" target="_blank" rel="external">https://segmentfault.com/q/1010000006250875?_ea=1072719</a> <a href="https://github.com/rccoder/blog/issues/5" target="_blank" rel="external">https://github.com/rccoder/blog/issues/5</a></p>
-</blockquote>
-<p>五、一个较为完整的 ajax 例子，以及ajax各个参数的意思？</p>
-<ol>
-<li>看下图</li>
-</ol>
-<p><img src="http://i.imgur.com/2tI7Wxi.png" alt=""></p>
-<ol>
-<li>另外参考 <a href="http://www.w3school.com.cn/jquery/ajax_ajax.asp" target="_blank" rel="external">http://www.w3school.com.cn/jquery/ajax_ajax.asp</a></li>
-</ol>
-<p>六.form中的input可以设置为readonly和disable，请问2者有什么区别？</p>
-<pre><code>readonly是为只读, input框value值用户不可修改。
-
-disable:是为禁用，input框不可用,用户不可点击。
-</code></pre><p>七.希望获取到页面中所有的checkbox怎么做？</p>
-<p><code>&lt;script&gt;
-        var oCh = $(&#39;:checkbox&#39;);
-    &lt;/script&gt;</code></p>
-<p>八.解释一下ajax，分析其优缺点</p>
-<blockquote>
-<pre><code>ajax是 Asynchhronous JavaScript and XML的缩写，异步的js和XML
-ajax通过XMLHttpRequest对象向服务器发送异步请求来进行数据交互
-</code></pre></blockquote>
-<pre><code>ajax的优点是：
-1.局部动态刷新；不需要整个页面的刷新，提升用户体验；
-2.异步的通信方式，不需要打断用户操作，响应迅速，较少数据传输
-3.前后端负载平衡，按需读取，减轻服务器负担，提升网站性能
-4.ajax被广泛支持
-5.数据与视图分离，符合前端表现行为分离的设计思想
-缺点：
-1.不支持跨域，需要通过jsonP/cors等方法实现跨域请求
-2.对浏览器前进后退机制的破坏
-3.对搜索引擎支持较弱（数据和dom是动态生成的）
-4.安全问题，容易遭受攻击
-</code></pre><p>九.判断对错：<br>（1）null是一个只有一个值的数据类型，这个值就是null。( √ )</p>
-<p>（2）Undefined是一个只有一个值的数据类型，这个值就是“undefined”。( √ )</p>
-<p>十.已知数组var arr = [“This”, “is”, “A”, “Dog”]，要求Alert出”This is A Dog”。</p>
-<blockquote>
-<p>`<body><br>        <script><br>            var arr = [“This”, “is”, “A”, “Dog”]<br>            var ar = arr.join(‘ ‘)<br>            alert(ar)<br>        </script><br>    </body>``</p>
-</blockquote>
-<p>十一.获取并输出今天的日期，以YYYY-MM-DD的方式，比如今天是2017年3月14日，则输出2017-05-08。</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-    var oDate = new Date();
-
-    var year = oDate.getFullYear()
-    var mon    = oDate.getMonth()+1 ;
-    var date = oDate.getDate();
-
-    function ti (n1){
-        if(n1 &lt;10){
-            return &quot;0&quot; +n1;
-        }else{
-            return &quot;&quot; + n1;
-    }
-    }
-    console.log(ti(year) + &apos;-&apos; + ti(mon) + &apos;-&apos;+ ti(date) )
-&lt;/script&gt;
-</code></pre><p>十二.foo = foo||bar ，这行代码是什么意思？为什么要这样写？</p>
-<blockquote>
-<pre><code>短路表达式，如果foo存在，则把foo的值赋给foo变量，否则把bar值赋给foo；
-foo和bar都是bool型变量,只要foo或者bar有一个为真，那么这个表达式的值就为真，并把它赋给foo。
-</code></pre></blockquote>
-<p>十三.下面的代码输出什么，为什么，请解释原理？</p>
-<pre><code>`var foo = 1;
-    function fn1(){
-        console.log(foo);
-        var foo = 2;
-        console.log(foo);
-    }
-    fn1();`
-</code></pre><blockquote>
-<p>结果：undefined , 2;<br>    原理：undefined,因为函数内的varfoo把外头的给覆盖了。相当于有一个 var foo;在一个函数内任何地方声明的var都会被提到函数的最开头。</p>
-</blockquote>
-<p>十四.如何垂直居中一个</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;&lt;/title&gt;
-    &lt;style type=&quot;text/css&quot;&gt;
-        .div{
-            width: 500px;
-            height: 500px;
-            border:1px solid #000;
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
         }
-        .div img{
-            vertical-align: middle;
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
         }
-    &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;div class=&apos;div&apos;&gt;
-        &lt;img src=&quot;xiong.jpg&quot;&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>十五.什么叫做事件委托，事件委托的优势是什么</p>
-<blockquote>
-<p>事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。<br>        优势：1、减少dom的操作，提高性能。<br>              （1）减少事件注册，节省内存。<br>                  （2）简化了dom节点更新时，相应事件的更新。</p>
-</blockquote>
-<p>十六.alert() 输出 ①换行 ② </p>
-<pre><code>alert(&quot;a\nb&quot;);
-alert(&quot;&lt;\/script&gt;&quot;)
-</code></pre><p>十七.== 与 === 的区别？</p>
-<blockquote>
-<p>前者一个是判断值是否相等,后者一个是判断值及类型是否完全相等。<br>        其中第一个在比较的时候，会进行类型转换，而第二个则不会</p>
-</blockquote>
-<p>十八.写出不少于5种Math对象的方法，分别说明含义以及用法</p>
-<pre><code>Math.random()
-1,方法返回带正号的 double值，该值大于等于0.0且小于1.0，如果先强制转换类型为int的话，返回为0，那么第二个始终返回为1
-2,Math.random()*14 //会返回一个 0-14 之间的随机数。
+    </style>
 
-Math.floor()
-1,方法执行的是向下取整计算，它返回的是小于或等于函数参数，并且与之最接近的整数。
-2,Math.floor(12.2)//返回12.0。
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
-Math.ceil()
-1,方法可将小数部分一律向整数部分进位。
-2,Math.ceil(12.2)//返回13.0。
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
-Math.round() 
-1,方法可把一个数字舍入为最接近的整数。
-2,Math.round(12.2)//返回12.0。
 
-Math.max() 
-1,方法用来获取给定的一组数值中的最大值。
-2,var arr = [2, 4, 6, 8, 5, 0]; 
-  var m=Math.max(arr);得到最大值8。
-</code></pre><p>十九.使用任意一种方法随机生成一个从100-300的整数</p>
-<pre><code>&lt;body&gt;
-    &lt;input id=&apos;btn&apos; type=&quot;button&quot; name=&quot;&quot; value=&apos;随机生成&apos;&gt;
-    &lt;span id=&apos;sp&apos;&gt;&lt;/span&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        var oBtn = document.getElementById(&apos;btn&apos;);
-        var oSp = document.getElementById(&apos;sp&apos;);
 
-        function mynumber(Num1, Num2) {
-            var choice = Num1 - Num2 + 1 ;
-            return Math.floor(Math.random() * choice + Num2)
-        }
-        oBtn.onclick = function () {
-            oSp.innerHTML = mynumber(300,100); 
-        }
-
-    &lt;/script&gt;
-&lt;/body&gt;
-</code></pre><p>二十.window load 和document ready的区别</p>
-<blockquote>
-<p>load表示，内容和dom都加载完成时在执行里面的代码。<br>        ready是，dom加载完就执行里面的代码。<br>        load在一个页面中如果有多次出现，只取最后一次。ready多次出现都可以</p>
-</blockquote>
-<p>二一.解释jsonp的原理，以及为什么jsonp不是真正的ajax</p>
-<pre><code>JSONP是一种非正式传输协议，该协议的一个要点就是允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名来包裹住JSON数据，这样客户端就可以随意定制自己的函数来自动处理返回数据了
-实现方法完全不一样。ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加标签来调用服务器提供的js脚本。
-
-（1）jsonp是前端工程师用来解决跨域的技术方案
-（2）jsonp的原理，是通过callback参数给服务器端，然后服务端返回数据时会将这个callback参数作为函数    名来包裹住JSON数据
-（3）ajax和jsonp不同，ajax用的是xmlHttpRequest技术，jsonp用的是callback参数作为函数名来包裹住JSO    N数据
-</code></pre><p>二二.常用浏览器内核</p>
-<ol>
-<li>webkit(Safari、Chrome) </li>
-<li>gecko(Mozilla Firefox)</li>
-<li>Trident(IE内核)</li>
-<li>Presto(Opera)</li>
-<li>blink(chromium)</li>
-</ol>
-<p>二三.img标签上title与alt属性的区别是什么?</p>
-<blockquote>
-<p>alt表示_图片加载失败时候的替代文字</p>
-<p>title表示鼠标悬停在图片上显示出的标题文字</p>
-</blockquote>
-<p>二四.JavaScript中如何对一个对象进行深度clone</p>
-<pre><code>&lt;script&gt;
-    function cloneObj(oldObj){
-        var str=Json.stringify(oldObj);
-        var newObj=Json.parse(str);
-        return newObj;
-    }
-
-    function cloneObj2(oldObj){
-        var newObj={};
-        for(var i in oldObj){
-            if(typeof oldObj[i]==&apos;object&apos;){
-                newObj[i]=cloneObj2(oldObj);
-            }else{
-                newObj[i]=oldObj[i];
-            }
-        }
-        return newObj;
-    }
-&lt;/script&gt;
-</code></pre><p>二五.简述js同步和异步的区别</p>
-<blockquote>
-<p>  (1)同步加载又称为阻塞模式，会阻止浏览器的后续处理，js默认为同步执行。</p>
-<p>  待数据，返回才会执行下面的代码。</p>
-<p> （2）异步模式就是在下载执行js时，还可以继续进行后续页面的处理。</p>
-<p>（3）ajax 同步指的是随着网页刷新更改页面内容；异步指的是更改网页局部内容，</p>
-<p>不必刷新整个网页；</p>
-</blockquote>
-<p>二六.什么叫优雅降级和渐进增强？</p>
-<blockquote>
-<p>渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效<br>果、交互等改进和追加功能达到更好的用户体验。</p>
-<p>优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
-<p>区别：a. 优雅降级是从复杂的现状开始，并试图减少用户体验的供给;<br>b. 渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要;<br>c. 降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带;</p>
-</blockquote>
-<p>二七.一次完整的HTTP事务是怎样的一个过程，常见的状态码有哪些？</p>
-<blockquote>
-<p>1,域名解析 –2,发起TCP的3次握手 –3,建立TCP连接后发起http请求 –4,服务器响应http请求，浏览器得到html代码 –5,浏览器解析html代码，并请求html代码中的资源（如js、css、图片等） –6,浏览器对页面进行渲染呈现给用户</p>
-</blockquote>
-<pre><code>常见HTTP状态码:
-    200 OK         
-        一切正常，对GET和POST请求的应答文档跟在后面
-    301 Moved Permanently
-        客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL。
-    302 Found
-        类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。
-    304 Not Modified
-       客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。
-    307 Temporary Redirect
-        和302（Found）相同。许多浏览器会错误地响应302应答进行重定向，即使原来的请求是 POST，即使它实际上只能在POST请求的应答是303时才能重定向。由于这个原因，HTTP 1.1新增了307，以便更加清除地区分几个状态代码： 当出现303应答时，浏览器可以跟随重定向的GET和POST请求；如果是307应答，则浏览器只能跟随对GET请求的重定向。
-    400 Bad Request
-       请求出现语法错误。
-    401 Unauthorized
-       客户试图未经授权访问受密码保护的页面。应答中会包含一个WWW-Authenticate头，浏览器据此显示用户名字/密码对话框，然后在填写合适的Authorization头后再次发出请求。
-    403 Forbidden
-       资源不可用。
-    404 Not Found
-         无法找到指定位置的资源
-    410 Gone
-         所请求的文档已经不再可用，而且服务器不知道应该重定向到哪一个地址。它和404的不同在于，返回407表示文档永久地离开了指定的位置，而404表示由于未知的原因文档不可用。
-    500 Internal Server Error
-          服务器遇到了意料不到的情况，不能完成客户的请求
-    501 Not Implemented
-         服务器不支持实现请求所需要的功能。例如，客户发出了一个服务器不支持的PUT请求
-    503 Service Unavailable
-        临时的服务器维护或者过载，服务器当前无法处理请求。
-    504 Gateway Timeout
-        作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器
-</code></pre><p>二八.CDN是啥？</p>
-<blockquote>
-<p>CDN的全称是Content Delivery Network，即内容分发网络。<br>        1，CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。</p>
-<p>2，CDN的基本原理是广泛采用各种缓存服务器，将这些缓存服务器分布到用户访问相对集中的地区或网络中，在用户访问网站时，利用全局负载技术将用户的访问指向距离最近的工作正常的缓存服务器上，由缓存服务器直接响应用户请求。</p>
-</blockquote>
-<p>二九.简述移动开发的注意点,如何做好不同手机的适配,你以前的项目是怎么做的?</p>
-<pre><code>`注意点：
-一、关于单位的使用
-二、布局上换算成rem单位
-三、细节处理
-    1、禁止自动识别电话和android自动识别邮箱
-    2、使用无衬线字体
-    3、禁止选择文本
-    4、禁止长按链接与图片弹出菜单
-    5、去除A连接input标签,点击出现自带的阴影样式
-    6、屏蔽阴影
-    7、单击延迟
-    8、手机拍照和上传图片。
-
-使用不同的响应操作：如，媒体查询Media Queries
-
-&lt;link href=&quot;css/reset.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
-  &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; /&gt;
-  &lt;link href=&quot;css/print.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot; /&gt;`
-</code></pre><p>三十.MVC，MVP 和 MVVM </p>
-<pre><code>  MVC（Model-View-Controller）是最常见的软件架构之一，业界有着广泛应用。
-1.MVC模式的意思是，软件可以分成三个部分。
-    视图（View）：用户界面。
-    控制器（Controller）：业务逻辑
-    模型（Model）：数据保存
-
-       View 传送指令到 Controller
-       Controller 完成业务逻辑后，要求 Model 改变状态
-    Model 将新的数据发送到 View，用户得到反馈
-2、互动模式
-    接受用户指令时，MVC 可以分成两种方式。一种是通过 View 接受指令，传递给 Controller。
-    另一种是直接通过controller接受指令。
-    Backbone
-    1. 用户可以向 View 发送指令（DOM 事件），再由 View 直接要求 Model 改变状态。
-    2. 用户也可以直接向 Controller 发送指令（改变 URL 触发 hashChange 事件），再由 Controller 发送给 View。
-    3. Controller 非常薄，只起到路由的作用，而 View 非常厚，业务逻辑都部署在 View。所以，Backbone 索性取消了 Controller，只保留一个 Router（路由器） 。
-
-MVP 模式将 Controller 改名为 Presenter，同时改变了通信方向。
-1. 各部分之间的通信，都是双向的。
-2. View 与 Model 不发生联系，都通过 Presenter 传递。
-3. View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。    
-
-MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。
-1.唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。Angular 和 Ember 都采用这种模式。
-</code></pre>
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
+<div class="share">
     
-  </div>
-  
-</article>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| Yeing.lx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -1426,10 +1034,33 @@ MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一�
 
 
 
+    
 
 
-  
-  
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/31/前端兼容/" title="Next: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/js性能优化/">js性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/前端兼容/">前端兼容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/前端面试问题/">前端面试问题</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
